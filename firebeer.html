@@ -1,0 +1,23 @@
+<head>
+  <title>firebeer</title>
+</head>
+
+<body>
+  <h1> Firebeer! </h1>
+  {{> feed}}
+  {{> jsonInterpreter}}
+</body>
+
+<template name="feed">
+  {{#each docs}}
+    <div>
+      {{string}}
+    </div>
+  {{/each}}
+</template>
+
+<template name="jsonInterpreter">
+  <h2> Feed me JSON! </h2>
+  <textarea id="textarea-xml-input"> </textarea>
+  <button id="button-xml-input-submit"> Submit </button>
+</template>
