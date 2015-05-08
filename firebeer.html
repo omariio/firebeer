@@ -2,11 +2,19 @@
   <title>firebeer</title>
 </head>
 
-<body>
+<template name="layout">
+  <div>
+    <a href="/"> Home </a>
+    <a href="/chat"> Chat </a>
+  </div>
+  {{> yield}}
+</template>
+
+<template name="home">
   <h1> Firebeer! </h1>
   {{> feed}}
   {{> jsonInterpreter}}
-</body>
+</template>
 
 <template name="feed">
   {{#each docs}}
@@ -14,6 +22,20 @@
       {{string}}
     </div>
   {{/each}}
+</template>
+
+<template name="chat">
+  {{#each log}}
+    <div>
+      {{text}}
+    </div>
+  {{/each}}
+
+  <div>
+    <input id="chat-box" type="text" placeholder="Hypothetically..." />
+    <button id="chat-send-button"> Send </button>
+  </div>
+
 </template>
 
 <template name="jsonInterpreter">
