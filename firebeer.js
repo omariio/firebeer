@@ -15,6 +15,10 @@ if (Meteor.isClient) {
     'click button': function () {
       var json = $("#textarea-xml-input").val();
       var obj = jQuery.parseJSON(json);
+
+      if($("#checkbox-include-time").prop("checked"))
+        obj.createdAt = new Date();
+
       Docs.insert(obj);
     }
   });
