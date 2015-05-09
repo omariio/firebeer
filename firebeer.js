@@ -42,12 +42,6 @@ if (Meteor.isClient) {
   });
 }
 
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
-  });
-}
-
 var sendMessage = function(){
   var text = document.getElementById("chat-box").value;
 
@@ -64,5 +58,3 @@ var sendMessage = function(){
 
   document.getElementById("chat-box").value = "";
 }
-
-Docs = new Meteor.Collection("docs");
