@@ -44,6 +44,7 @@ if (Meteor.isClient) {
 
 var sendMessage = function(){
   var text = document.getElementById("chat-box").value;
+  var nick = document.getElementById("nickname-box").value;
 
   if(text.length == 0)
     return;
@@ -51,6 +52,7 @@ var sendMessage = function(){
   var messageObject = {
     type:"message",
     text:text,
+    nickname:nick,
     timestamp:(new Date()).getTime()
   }
 

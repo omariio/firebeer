@@ -27,14 +27,23 @@
 <template name="chat">
   {{#each log}}
     <div>
-      {{text}}
+      {{nickname}}: {{text}}
     </div>
   {{/each}}
 
   <div>
-    <input id="chat-box" type="text" placeholder="Hypothetically..." />
+    <div>
+      <input id="chat-box" type="text" placeholder="Hypothetically..." />
+    </div>
+    <div>
+      <input id="nickname-box" type="text" placeholder="nickname">
+    </div>
     <button id="chat-send-button"> Send </button>
   </div>
+
+</template>
+
+<template name="form">
 
 </template>
 
